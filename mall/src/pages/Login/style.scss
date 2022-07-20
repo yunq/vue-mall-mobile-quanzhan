@@ -1,0 +1,104 @@
+$color: #b532e9;
+
+// 登录 、注册切换动画
+.login-slide-enter, .reg-slide-enter {
+  opacity: 0;
+}
+.login-slide-enter-active, 
+.reg-slide-enter-active {
+  transition: all 1s ease;
+}
+.login-slide-leave-active,
+.reg-slide-leave-active {
+  display: none;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/imgs/login-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .form-container {
+    width: 90%;
+    box-sizing: border-box;
+    border-radius: .2rem;
+    padding: .8rem;
+    background: #fff;
+    box-shadow: -2px 3px 23px 1px rgba(0, 0, 0, 0.1);
+    .title {
+      font-size: 1.3rem;
+      color: #000;
+      letter-spacing: .2rem;
+      margin-bottom: 1rem;
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      .u-name, .u-password, .verify-code, .mobile-phone, .sms {
+        flex: 1;
+        width: 0;
+        height: 3rem;
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+        caret-color: $color;
+        -webkit-caret-color: $color;
+        -moz-caret-color: $color;
+        -o-caret-color: $color;
+        -ms-caret-color: $color;
+        &::-webkit-input-placeholder {
+          color: #D8D8D8;
+          font-size: 1.2rem;
+          letter-spacing: .1rem;
+        }
+      }
+      .send-sms {
+        color: $color;
+        font-size: 1.1rem;
+        letter-spacing: .1rem;
+      }
+      .pic-code {
+        flex-basis: 30%;
+      }
+      &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+      &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        background: $color;
+        transform: scaleX(0);
+        transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      }
+    }
+    .focus-a::after { transform: scaleX(1); }
+    .login-btn {
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      color: #fff;
+      background: $color;
+      border-radius: .2rem;
+    }
+    .register-entry, .login-entry {
+      margin-top: 1rem;
+      text-align: right;
+      letter-spacing: .1rem;
+      color: $color;
+    }
+  }
+}

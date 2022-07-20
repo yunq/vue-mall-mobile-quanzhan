@@ -1,0 +1,95 @@
+$color: #b532e9;
+
+.user {
+  .user-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color;
+    padding: 10% 0;
+    .avatar { 
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+    p {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .setting {
+      position: absolute;
+      color: #fff;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.3rem;
+    }
+  }
+  .order-index-wrapper {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50%;
+      background: $color;
+      z-index: -1;
+    }
+    .order-index-list {
+      width: 90%;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 3px 4px 20px rgba(45, 45, 45, .15);
+      overflow: hidden;
+      .order-all {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #eee;
+        padding: 3vw;
+        span {
+          font-weight: bold;
+          color: #333;
+        }
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 4vw 0;
+        .order-index-item { 
+          position: relative;
+          text-align: center;
+          .icon { font-size: 6.5vw; }
+          .title { font-size: 3.5vw; margin-top: 2vw; }
+          .order-num {
+            position: absolute;
+            top: -2vw;
+            right: -2vw;
+            width: 6vw;
+            height: 6vw;
+            line-height: 6vw;
+            text-align: center;
+            background: $color;
+            border-radius: 50%;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .other-entry {
+    margin-top: 2rem;
+    margin-bottom: 20vw;
+    div {
+      display: flex;
+      align-items: center;
+      padding: .8rem 1rem;
+      border-bottom: 1px solid #eee;
+      .small-icon { margin-right: .5rem; }
+      .arrow-icon { margin-left: auto; }
+      span { font-size: 3.5vw; }
+    }
+  }
+}
